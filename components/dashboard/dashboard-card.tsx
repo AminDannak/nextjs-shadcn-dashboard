@@ -1,11 +1,11 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Newspaper, LucideIcon, icons } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 interface Props {
   title: string;
   count: number;
-  icon: ReactElement<LucideIcon>;
+  Icon: LucideIcon;
 }
 
 export default function DashboardCard(props: Props) {
@@ -16,7 +16,7 @@ export default function DashboardCard(props: Props) {
           {props.title}
         </h3>
         <div className="flex gap-5 justify-center items-center">
-          {props.icon}
+          <props.Icon className="text-slate-500" size={72} />
           <h3 className="text-5xl font-semibold text-slate-500 dark:text-slate-200">
             {props.count}
           </h3>
