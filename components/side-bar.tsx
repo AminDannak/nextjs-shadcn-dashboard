@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Command,
-  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -18,7 +17,6 @@ import {
   CreditCard,
   Settings,
   User,
-  FolderOpen,
 } from "lucide-react";
 
 export default function SideBar() {
