@@ -3,6 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/img/logo.png";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function NavBar() {
   return (
@@ -10,10 +18,25 @@ export default function NavBar() {
       <Link href="/">
         <Image src={logo} alt="logo" width={40} />
       </Link>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-        <AvatarFallback className="text-black">?</AvatarFallback>
-      </Avatar>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="focus:outline-none">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback className="text-black">?</AvatarFallback>
+          </Avatar>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            {/* TODO: add profile page */}
+            <Link href="/profile">Porfile</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/auth">Logout</Link>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }
