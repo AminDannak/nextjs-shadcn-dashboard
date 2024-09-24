@@ -1,3 +1,4 @@
+import AnalyticsChart from "@/components/dashboard/analytics-chart";
 import DashboardCard from "@/components/dashboard/dashboard-card";
 import PostsTable from "@/components/posts/post-table";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
@@ -11,6 +12,7 @@ export default function Home() {
         <DashboardCard title="Users" count={750} Icon={User} />
         <DashboardCard title="Comments" count={100} Icon={MessageCircle} />
       </div>
+      <AnalyticsChart />
       <PostsTable title="Latest Posts" limit={5}/>
     </>
   );
