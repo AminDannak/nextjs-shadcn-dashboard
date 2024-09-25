@@ -7,10 +7,12 @@ function MainLayout({ children }: { children: ReactNode }) {
     <>
       <NavBar/>
       <div className="flex w-full">
-        <div className="hidden md:block h-[100vh] w-[300px]">
+        <div className="hidden md:block max-h-full w-[300px]">
           <SideBar/>
         </div>
-        <div className="p-5 w-full flex justify-center">{children}</div>
+        <div className="w-full h-[100vh] flex justify-center">
+          <div className="p-5 w-full flex flex-col max-w-[1140px]">{children}</div>
+        </div>
       </div>
     </>
   );
