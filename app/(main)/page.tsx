@@ -5,7 +5,7 @@ import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col">
       <div className="flex flex-col md:flex-row justify-between gap-5 mb-5">
         <DashboardCard title="Posts" count={100} Icon={Newspaper} />
         <DashboardCard title="Categories" count={12} Icon={Folder} />
@@ -14,6 +14,6 @@ export default function Home() {
       </div>
       <AnalyticsChart />
       <PostsTable title="Latest Posts" limit={5}/>
-    </>
+    </div>
   );
 }

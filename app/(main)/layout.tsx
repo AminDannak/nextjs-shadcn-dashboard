@@ -5,12 +5,12 @@ import React, { ReactNode } from "react";
 function MainLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <NavBar />
-      <div className="flex">
+      <NavBar/>
+      <div className="flex w-full">
         <div className="hidden md:block h-[100vh] w-[300px]">
-          <SideBar />
+          <SideBar/>
         </div>
-        <div className="p-5 w-full md:max-w-[1140px]">{children}</div>
+        <div className="p-5 w-full flex justify-center">{children}</div>
       </div>
     </>
   );
