@@ -36,7 +36,7 @@ export default function SideBar() {
           </CommandItem>
           <CommandItem>
             <Folders className="mr-2 h-4 w-4" />
-            <Link href="#">Posts</Link>
+            <Link href="#">Categories</Link>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
