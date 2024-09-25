@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import posts from "@/data/posts";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   title: z.string().min(1, { message: "title is required" }),
@@ -33,6 +33,7 @@ interface Props {
 }
 
 function PostEditPage(props: Props) {
+  const { toast } = useToast();
   const post = posts.find((p) => p.id === props.params.id);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,7 +46,10 @@ function PostEditPage(props: Props) {
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    toast({
+      title: "🥳 success!",
+      description: `post "${data.title}" was successfully updated.`,
+    });
   };
 
   return (
@@ -130,7 +134,9 @@ function PostEditPage(props: Props) {
               </FormItem>
             )}
           />
-          <Button className="w-full dark:bg-slate-800 dark:text-white">Update Post</Button>
+          <Button className="w-full dark:bg-slate-800 dark:text-white">
+            Update Post
+          </Button>
         </form>
       </Form>
     </>
